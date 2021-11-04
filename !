@@ -1,0 +1,15 @@
+def getAdjacentSum(arr):
+   size = len(arr)
+   sumArr = [0] * size #Declare arr of size equal to the len of array
+
+   sumArr[0] = (arr[0] + arr[1]) #Sum of first and next of first element
+
+   for i in range(1,size-1): #iterating till size - 1
+       #sum of neighbours in the array
+       sumArr[i] = arr[i-1] + arr[i] + arr[i+1]
+
+   sumArr[-1] = arr[-2] + arr[-1] #sum of last and last but one elem
+
+   return sumArr
+
+print(getAdjacentSum([10,20,30,40,50])) #call function and printing value
